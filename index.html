@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>My To-Do List</title>
+</head>
+
+<body>
+    <main>
+        <h2 class='name'>
+            My to-do list
+        </h2>
+        <h2 class='sub'>
+            Double-click an item to mark it complete
+        </h2>
+
+        <section class="activity">
+            <input type="text" class="item" placeholder="Enter a task to-do" />
+            <button class="btn btn--add">Add</button>
+        </section>
+
+        <div class='table--space'>
+            <table class='items'>
+            </table>
+        </div>
+
+        <section class='buttons'>
+            <button class="btn btn--done">Clear completed</button>
+            <button class="btn btn--all">Empty list</button>
+        </section>
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

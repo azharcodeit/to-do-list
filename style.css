@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui;
+  font-weight: 400;
+  height: 100vh;
+  color: #333;
+  background-image: linear-gradient(to top left, #47ac6e 0%, #1e824c 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* LAYOUT */
+main {
+  position: relative;
+  width: 70rem;
+  height: 50rem;
+  background-color:#eee;
+  backdrop-filter: blur(200px);
+  filter: blur();
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  overflow: hidden;
+  display: flex;
+  padding:3rem;
+  flex-direction: column;
+}
+
+/* ELEMENTS */
+.name {
+    position: relative;
+    font-size: 3rem;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+
+.sub{
+    position: relative;
+    font-size: 2rem;
+    font-style: italic;
+    letter-spacing: 0.5px;
+    word-spacing: 1px;
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+
+.activity {
+    margin-bottom: 2rem;
+}
+
+.btn{
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    color: white;
+    border-radius: 3px;
+    border: none ;
+    width: 15rem;
+}
+
+.btn--add{
+    background-color: rgb(34, 167, 240);
+}
+
+.btn--done{
+    background-color: rgb(30, 130, 76);
+}
+
+.btn--all{
+    background-color: rgb(240, 52, 52);
+}
+
+.activity .item{
+    width: 32rem;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    border:0.5px solid rgb(206, 206, 206);
+}
+
+.table--space{
+
+    background-color: rgb(218, 218, 213);
+    width: auto;
+    height: 30rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    overflow-y:scroll;
+    overflow-x:scroll;
+}
+
+table{
+    border: 1px solid black;
+    border-collapse: collapse;
+    width:100%;
+    background-color: rgb(255, 255, 255);
+  }
+
+th, td{
+    border: 1px solid rgb(206, 206, 206);
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}  
+
+.nr{
+    width: 2rem;
+}
+
+.hidden{
+    display: none;
+}
+
+.completed-task{
+    background-color: palegreen;
+    text-decoration: line-through; 
+}
