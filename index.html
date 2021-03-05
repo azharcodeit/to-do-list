@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <main>
+    <main id='main'>
         <h2 class='name'>
             My to-do list
         </h2>
@@ -19,8 +19,10 @@
         </h2>
 
         <section class="activity">
-            <input type="text" class="item" placeholder="Enter a task to-do" />
-            <button class="btn btn--add">Add</button>
+            <input type="text" class="filter" placeholder="Type to filter..." />
+            <button class="btn btn--add" data-action="addTask"><img class="imgAdd" data-action="addTask"
+                    src="/icons/add.png" onmouseover="this.src='/icons/add-hover.png'"
+                    onmouseout="this.src='/icons/add.png'"></button>
         </section>
 
         <div class='table--space'>
@@ -29,11 +31,55 @@
         </div>
 
         <section class='buttons'>
-            <button class="btn btn--done">Clear completed</button>
-            <button class="btn btn--all">Empty list</button>
+            <button class="btn btn--done" data-action="deleteCompleted">Clear completed</button>
+            <button class="btn btn--all" data-action="deleteAll">Empty list</button>
+
         </section>
     </main>
+    <div class="modal modal-add hidden">
+        <button class="close-modal">&times;</button>
+        <h2 class='name add'>Add to-do</h2>
+        <form>
+            <h2 class='title'>
+                Title
+            </h2>
+            <input type="text" class="task-title" />
+            <p class='context'>
+                Context
+            </p>
+            <textarea type="text" class="task-context"></textarea>
+        </form>
+        <button class="btn modal--cancel">Cancel</button>
+        <button class="btn modal--add" data-action="add">Add</button>
 
+    </div>
+    <div class="modal modal-delete hidden">
+        <button class="close-modal">&times;</button>
+        <h2 class='name delete'>Delete to-do</h2>
+        <p class='name confirm-delete'>Are you sure?</p>
+        <button class="btn modal--cancel">Cancel</button>
+        <button class="btn modal--delete">Delete</button>
+
+    </div>
+    <div class="modal modal-edit hidden">
+        <button class="close-modal">&times;</button>
+        <h2 class='name edit'>Edit to-do</h2>
+        <form>
+            <h2 class='title'>
+                Title
+            </h2>
+
+            <input type="text" class="title--edit" />
+            <p class='context'>
+                Context
+            </p>
+            <textarea type="text" class="context--edit"></textarea>
+        </form>
+        <button class="btn modal--cancel">Cancel</button>
+        <button class="btn modal--edit">Edit</button>
+
+    </div>
+    <div class="overlay hidden"></div>
 
     <script src="script.js"></script>
 </body>

@@ -14,7 +14,7 @@ body {
   font-weight: 400;
   height: 100vh;
   color: #333;
-  background-image: linear-gradient(to top left, #47ac6e 0%, #1e824c 100%);
+  background-image: linear-gradient(to bottom right, #67B26F , #4ca2cd );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,6 +58,9 @@ main {
 
 .activity {
     margin-bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .btn{
@@ -68,10 +71,19 @@ main {
     border-radius: 3px;
     border: none ;
     width: 15rem;
+    transition-duration: 0.4s;
+}
+
+.btn:hover{
+  opacity: 0.6;
+
 }
 
 .btn--add{
-    background-color: rgb(34, 167, 240);
+    margin: 0;
+    padding: 0.5rem;
+    height: 3.5rem;
+    width:  3.5rem;
 }
 
 .btn--done{
@@ -82,7 +94,15 @@ main {
     background-color: rgb(240, 52, 52);
 }
 
-.activity .item{
+.imgAdd{
+   margin: 0;
+   padding: 0;
+   height: 2.5rem;
+   width:  2.5rem;
+   cursor: pointer;
+}
+
+.activity .filter{
     width: 32rem;
     font-size: 1.5rem;
     padding: 0.5rem;
@@ -117,14 +137,115 @@ th, td{
 }  
 
 .nr{
-    width: 2rem;
-}
-
-.hidden{
-    display: none;
+    width: 3.5rem;
 }
 
 .completed-task{
     background-color: palegreen;
     text-decoration: line-through; 
 }
+
+.close-modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  font-size: 3rem;
+  font-weight: 200;
+  color: rgb(68, 68, 68);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+p {
+  font-size: 1.8rem;
+}
+
+/* -------------------------- */
+/* CLASSES TO MAKE MODAL WORK */
+.hidden {
+  display: none;
+}
+
+.modal, .modal-delete, .modal-edit {
+  position: absolute;
+  width: 50rem;
+  background-color: #eee;
+  padding:3rem;
+  border-radius: 9px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(1px);
+  z-index: 5;
+  
+}
+
+.task-title, .task-context, .title--edit, .context--edit{
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  margin-bottom:1rem;
+  border:0.5px solid rgb(206, 206, 206);
+}
+
+.task-context,.context--edit{
+height: 20rem;
+}
+
+.add, .edit, .delete{
+  font-weight: 500;
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+}
+
+.title, .context{
+  position: relative;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+.confirm-delete{
+  position:relative;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 350;
+  margin: 5rem;
+}
+
+.modal--add, .modal--edit, .modal--delete{
+  background-color: rgb(34, 167, 240);
+  border:0.5px solid rgb(34, 167, 240);
+}
+
+.modal--delete{ 
+  background-color:rgb(240, 52, 52);
+  border:0.5px solid rgb(240, 52, 52);
+}
+
+.modal--cancel{
+  color:black;
+  border:0.5px solid rgb(158, 158, 158);
+  margin-left: 6.5rem;
+}
+
+img{
+  height: 2rem;
+  width:  2rem;
+  cursor: pointer;
+}
+
