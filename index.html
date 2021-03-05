@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <main>
+    <main id='main'>
         <h2 class='name'>
             My to-do list
         </h2>
@@ -20,8 +20,9 @@
 
         <section class="activity">
             <input type="text" class="filter" placeholder="Type to filter..." />
-            <button class="btn btn--add"><img class="imgAdd" src="/icons/add.png"
-                    onmouseover="this.src='/icons/add-hover.png'" onmouseout="this.src='/icons/add.png'"></button>
+            <button class="btn btn--add" data-action="addTask"><img class="imgAdd" data-action="addTask"
+                    src="/icons/add.png" onmouseover="this.src='/icons/add-hover.png'"
+                    onmouseout="this.src='/icons/add.png'"></button>
         </section>
 
         <div class='table--space'>
@@ -30,8 +31,8 @@
         </div>
 
         <section class='buttons'>
-            <button class="btn btn--done">Clear completed</button>
-            <button class="btn btn--all">Empty list</button>
+            <button class="btn btn--done" data-action="deleteCompleted">Clear completed</button>
+            <button class="btn btn--all" data-action="deleteAll">Empty list</button>
 
         </section>
     </main>
@@ -49,7 +50,7 @@
             <textarea type="text" class="task-context"></textarea>
         </form>
         <button class="btn modal--cancel">Cancel</button>
-        <button class="btn modal--add">Add</button>
+        <button class="btn modal--add" data-action="add">Add</button>
 
     </div>
     <div class="modal modal-delete hidden">
